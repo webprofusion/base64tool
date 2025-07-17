@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 Encoder/Decoder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Base64 Encoder/Decoder</h1>
+            <p>Convert text to Base64 and back with support for URL-safe encoding</p>
+        </header>
+
+        <div class="tool-section">
+            <div class="options">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="urlSafeToggle">
+                    <span class="slider"></span>
+                    <span class="label">URL-Safe Base64</span>
+                </label>
+                <div class="info-tooltip">
+                    <span class="info-icon">ⓘ</span>
+                    <div class="tooltip-content">
+                        URL-Safe Base64 uses '-' and '_' instead of '+' and '/', and omits padding '='
+                    </div>
+                </div>
+            </div>
+
+            <div class="converter-section">
+                <div class="input-group">
+                    <label for="plaintext">Plain Text</label>
+                    <textarea id="plaintext" placeholder="Enter text to encode..."></textarea>
+                    <div class="button-group">
+                        <button id="encodeBtn" class="btn primary">Encode ↓</button>
+                        <button id="clearPlainBtn" class="btn secondary">Clear</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="base64text">Base64 Encoded</label>
+                    <textarea id="base64text" placeholder="Enter Base64 to decode..."></textarea>
+                    <div class="button-group">
+                        <button id="decodeBtn" class="btn primary">Decode ↑</button>
+                        <button id="clearBase64Btn" class="btn secondary">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="copyPlainBtn" class="btn copy-btn">Copy Plain Text</button>
+                <button id="copyBase64Btn" class="btn copy-btn">Copy Base64</button>
+                <button id="swapBtn" class="btn swap-btn">Swap ⇄</button>
+            </div>
+
+            <div class="info-panel">
+                <div class="info-item">
+                    <span class="info-label">Input Length:</span>
+                    <span id="inputLength">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Output Length:</span>
+                    <span id="outputLength">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Encoding Type:</span>
+                    <span id="encodingType">Standard</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="examples-section">
+            <h3>Examples</h3>
+            <div class="example-grid">
+                <div class="example-item">
+                    <h4>Standard Base64</h4>
+                    <p><strong>Input:</strong> Hello, World!</p>
+                    <p><strong>Output:</strong> SGVsbG8sIFdvcmxkIQ==</p>
+                </div>
+                <div class="example-item">
+                    <h4>URL-Safe Base64</h4>
+                    <p><strong>Input:</strong> Hello, World!</p>
+                    <p><strong>Output:</strong> SGVsbG8sIFdvcmxkIQ</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Base64 Tool - Simple, Fast, Secure</p>
+        </footer>
+    </div>
+
+    <div id="notification" class="notification hidden">
+        <span id="notificationText"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
